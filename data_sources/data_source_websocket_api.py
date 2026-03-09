@@ -18,7 +18,6 @@ exchanges = {
 
 
 if __name__ =="__main__":
-    for source_url in exchanges:
-        
+    for source_name, source_url in exchanges.items():
         # call the function to establish connection in another file
-        setup_websocket_connection(source_url)
+        setup_websocket_connection(source_url , source_name)

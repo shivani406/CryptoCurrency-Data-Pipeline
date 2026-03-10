@@ -17,6 +17,7 @@ def on_message(ws, message):
 
     logger.info(f"Received message: {message}")
     # print the incoming message from the websocket connection for now
+    print(message)
 
     # processing will be minimal just check for null/empty messages
     if not message:
@@ -24,7 +25,7 @@ def on_message(ws, message):
         return
 
     # Send Data to kafka 
-    producer.produce('raw-trades', value=message)
+   # producer.produce('raw-trades', value=message)
     
     #=== add occasional debug logs to check the frequency of incoming messages and the size of the messages 
 

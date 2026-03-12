@@ -3,3 +3,4 @@ asyncio
 websockets
 dotenv
 logging
+aiokafka

@@ -1,7 +1,5 @@
-import asyncio
-import websockets
-import json
 import logging
+import logging_setup
 from logging_setup import init_logging
 from setup_connection.source_url_connections import setup_websocket_connection
 
@@ -16,8 +14,8 @@ exchanges = {
     # Add more exchanges and their websocket URLs here
 }
 
-
 if __name__ =="__main__":
-    for source_name, source_url in exchanges.items():
+    for source_name, source_websocket_url in exchanges.items():
         # call the function to establish connection in another file
-        setup_websocket_connection(source_url , source_name)
+        setup_websocket_connection(source_websocket_url , source_name)
+

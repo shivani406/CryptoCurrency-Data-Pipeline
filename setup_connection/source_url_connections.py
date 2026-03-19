@@ -3,17 +3,12 @@ import logging_setup
 import asyncio
 import json
 import aiokafka
-from websockets.exceptions import ConnectionClosed, WebSocketException
 
 import logging
 from logging_setup import init_logging
 
-
-# setup logging for the websocket connection setup process
 init_logging()
 logger = logging.getLogger(__name__)
-
-
 
 
 
@@ -31,12 +26,6 @@ def on_message(ws, message):
         return
     
     #=== add occasional debug logs to check the frequency of incoming messages and the size of the messages 
-
-
-
-
-
-
 
 
 
@@ -74,6 +63,3 @@ async def setup_websocket_connection(source_websocket_url , source_name):
 
         logger.error(f"Error fetching data from {source_websocket_url} from source {source_name}")
         #=== further attempt to reconnect can be implemented here in case of an error in the websocket connection, but for now we will just log the error and move on
-
-
-    
